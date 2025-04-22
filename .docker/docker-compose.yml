@@ -1,0 +1,13 @@
+services:
+  postgres:
+    image: postgres:15
+    container_name: postgres
+    environment:
+      - POSTGRES_DB=library
+      - POSTGRES_USER=library
+      - POSTGRES_PASSWORD=library
+    volumes:
+      - .docker/postgres:/docker-entrypoint-initdb.d
+    ports:
+      - 5432:5432
+    
